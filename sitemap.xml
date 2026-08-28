@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://xn--0psw40a.cn/index.html</loc>
-        <lastmod>2026-08-27</lastmod>
+        <lastmod>2026-08-28</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
@@ -66,10 +66,16 @@
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    <!-- 新增文章 260827.html -->
     <url>
         <loc>https://xn--0psw40a.cn/20260827.html</loc>
         <lastmod>2026-08-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <!-- 新增：20260828.html -->
+    <url>
+        <loc>https://xn--0psw40a.cn/20260828.html</loc>
+        <lastmod>2026-08-28</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
