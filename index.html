@@ -214,6 +214,7 @@ var _hmt = _hmt || [];
         <!-- 左侧文章列表 -->
         <div class="left-box">
             <h2>最新资讯</h2>
+<div id="article-list">
 <div class="article-card">
     <h3><a href="./20260905.html">钢卷尺磁吸尺钩有什么用？磁吸尺钩适合什么工种</a></h3>
     <div class="pub-time">发布时间：2026‑09‑05</div>
@@ -310,11 +311,9 @@ var _hmt = _hmt || [];
                 <a class="read-more" href="260820.html">查看全文 →</a>
             </div>
 
+</div>
             <!-- 分页区域 -->
-            <div class="page-wrap">
-                <span class="current">1</span>
-                <a href="page2.html">2</a>
-                <a href="page2.html">下一页</a>
+            <div class="page-wrap" id="pagination"></div>
             </div>
         </div>
 
@@ -351,5 +350,50 @@ var _hmt = _hmt || [];
     </div>
 </footer>
 
+<script>
+(function(){
+    var cards = document.querySelectorAll('#article-list .article-card');
+    var perPage = 10;
+    var totalPages = Math.ceil(cards.length / perPage);
+    var currentPage = 1;
+
+    function showPage(page){
+        currentPage = page;
+        var start = (page-1)*perPage;
+        var end = start + perPage;
+        cards.forEach(function(card, i){
+            card.style.display = (i >= start && i < end) ? 'block' : 'none';
+        });
+        renderPagination();
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+
+    function renderPagination(){
+        var pag = document.getElementById('pagination');
+        var html = '';
+        if(totalPages <= 1){ pag.innerHTML = ''; return; }
+        // 上一页
+        if(currentPage > 1){
+            html += '<a href="javascript:void(0)" onclick="window._goPage('+(currentPage-1)+')">上一页</a>';
+        }
+        // 页码
+        for(var i=1; i<=totalPages; i++){
+            if(i === currentPage){
+                html += '<span class="current">'+i+'</span>';
+            }else{
+                html += '<a href="javascript:void(0)" onclick="window._goPage('+i+')">'+i+'</a>';
+            }
+        }
+        // 下一页
+        if(currentPage < totalPages){
+            html += '<a href="javascript:void(0)" onclick="window._goPage('+(currentPage+1)+')">下一页</a>';
+        }
+        pag.innerHTML = html;
+    }
+
+    window._goPage = showPage;
+    showPage(1);
+})();
+</script>
 </body>
 </html>
