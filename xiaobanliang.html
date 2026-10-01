@@ -180,6 +180,7 @@ var _hmt = _hmt || [];
       ]
     }
     </script>
+<link rel="stylesheet" href="/assets/wechat-cta.css">
 </head>
 <body>
 
@@ -204,10 +205,11 @@ var _hmt = _hmt || [];
             <h1>小批量卷尺定制<br><span>10 把就能做</span></h1>
             <p class="hero-sub">很多客户卡在第一步：需求只有几十把，一问厂家却要 500 把起订。要么硬着头皮压一堆用不完的货，要么干脆放弃定制。这里没有这个门槛——10 把起订，激光打印 logo，3 到 7 天交货。</p>
             <div class="hero-cta-group">
+                <a class="btn-secondary" href="#wx-cta">💬 微信咨询</a>
                 <a class="btn-primary" href="javascript:void(0)" onclick="return openTaobaoShop(event)">
                     🛒 10 把起，去淘宝店下单
                 </a>
-                <a class="btn-secondary" href="https://mfujun2025.github.io/juanchisheji/" target="_blank">
+                <a class="btn-secondary" href="https://xn--3lru7r.cn/design/" target="_blank">
                     🎨 在线设计看效果
                 </a>
             </div>
@@ -427,14 +429,32 @@ var _hmt = _hmt || [];
             <a class="btn-primary" href="javascript:void(0)" onclick="return openTaobaoShop(event)">
                 🛒 进入淘宝店铺「尺行天下」
             </a>
-            <a class="btn-secondary" href="https://mfujun2025.github.io/juanchisheji/" target="_blank">
+            <a class="btn-secondary" href="https://xn--3lru7r.cn/design/" target="_blank">
                 🎨 先去在线设计工具试试
             </a>
         </div>
-        <p style="margin-top:20px;font-size:14px;color:#8fa8c8;">淘宝店铺：cxtx.taobao.com | 店铺名称：尺行天下 | 设计工具：mfujun2025.github.io/juanchisheji</p>
+        <p style="margin-top:20px;font-size:14px;color:#8fa8c8;">淘宝店铺：cxtx.taobao.com | 店铺名称：尺行天下 | 设计工具：https://xn--3lru7r.cn/design/</p>
     </div>
 </section>
 
+<!-- wechat-cta:card -->
+<div class="wx-cta wx-cta--prominent" id="wx-cta">
+  <div class="wx-cta__card">
+    <div class="wx-cta__icon" aria-hidden="true">💬</div>
+    <div class="wx-cta__copy">
+      <p class="wx-cta__title">发个 logo 过来，先看效果再谈价</p>
+      <p class="wx-cta__desc">微信上一句话的事——把 logo 或文字发过来，按你的规格出效果图。10 把起订，量大量小都接。</p>
+    </div>
+    <div class="wx-cta__act">
+      <span class="wx-cta__label">微信号</span>
+      <button class="wx-cta__id" type="button" data-wx="mfujun" aria-label="复制微信号 mfujun">
+        <span class="wx-cta__id-txt">mfujun</span>
+        <span class="wx-cta__id-tag">复制</span>
+      </button>
+    </div>
+    <p class="wx-cta__hint">点按钮即可复制微信号；若未复制成功，长按上方「mfujun」手动选中。</p>
+  </div>
+</div>
 <footer>
     <div class="container">
         <div class="footer-links">
@@ -466,5 +486,6 @@ function openTaobaoShop(e){
     return false;
 }
 </script>
+<script defer src="/assets/wechat-cta.js"></script>
 </body>
 </html>

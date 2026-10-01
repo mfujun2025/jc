@@ -1,0 +1,295 @@
+/* ==========================================================================
+   微信留资入口（站点通用组件）
+   —— 结构由各页 HTML 提供，样式集中在此文件，交互在 wechat-cta.js
+   配色对齐站点：主橙 #ff6a00 → #ff4400，辅助链接色 #ff7722
+   变体：默认（文章页，克制白底）/ --prominent（成交页，浅橙强调）
+   ========================================================================== */
+
+.wx-cta {
+    margin: 30px auto;
+    max-width: 1100px;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+.wx-cta *,
+.wx-cta *::before,
+.wx-cta *::after {
+    box-sizing: border-box;
+}
+
+.wx-cta__card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    background: #fff;
+    border: 1px solid #e4e9ef;
+    border-left: 4px solid #ff6a00;
+    border-radius: 12px;
+    padding: 18px 24px;
+    box-shadow: 0 2px 12px rgba(17, 24, 39, .05);
+}
+
+/* 成交页：浅橙强调，视觉权重更高 */
+.wx-cta--prominent .wx-cta__card {
+    background: linear-gradient(135deg, #fff8f2 0%, #ffffff 70%);
+    border-color: #ffd8bc;
+    border-left-color: #ff4400;
+    box-shadow: 0 6px 24px rgba(255, 68, 0, .12);
+    padding: 22px 26px;
+}
+
+.wx-cta__icon {
+    flex: 0 0 auto;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff6a00, #ff4400);
+    color: #fff;
+    font-size: 22px;
+    line-height: 46px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(255, 68, 0, .3);
+}
+
+.wx-cta__copy {
+    flex: 1 1 300px;
+    min-width: 0;
+}
+
+.wx-cta__title {
+    margin: 0 0 4px;
+    font-size: 17px;
+    font-weight: 700;
+    color: #1a2b48;
+    line-height: 1.45;
+}
+
+.wx-cta--prominent .wx-cta__title {
+    font-size: 18px;
+}
+
+.wx-cta__desc {
+    margin: 0;
+    font-size: 14px;
+    color: #6b7684;
+    line-height: 1.6;
+}
+
+.wx-cta__act {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+}
+
+.wx-cta__label {
+    font-size: 12px;
+    color: #9aa4b2;
+    letter-spacing: .5px;
+}
+
+/* 微信号本体 = 一个可点的一键复制按钮 */
+.wx-cta__id {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    padding: 11px 16px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: .3px;
+    color: #fff;
+    background: linear-gradient(135deg, #ff6a00, #ff4400);
+    border: none;
+    border-radius: 9px;
+    cursor: pointer;
+    box-shadow: 0 3px 12px rgba(255, 68, 0, .28);
+    transition: transform .15s, box-shadow .15s, background .15s;
+    -webkit-tap-highlight-color: transparent;
+    min-height: 44px;          /* 触控目标 ≥44px */
+}
+
+.wx-cta__id:hover {
+    box-shadow: 0 5px 18px rgba(255, 68, 0, .38);
+    transform: translateY(-1px);
+}
+
+.wx-cta__id:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(255, 68, 0, .3);
+}
+
+.wx-cta__id:focus-visible {
+    outline: 3px solid rgba(255, 106, 0, .45);
+    outline-offset: 2px;
+}
+
+.wx-cta__id-txt {
+    cursor: text;              /* 允许手动选中，JS 失败时还能手动复制 */
+    user-select: all;
+}
+
+.wx-cta__id-tag {
+    font-family: "Microsoft Yahei", system-ui, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    padding: 3px 9px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, .24);
+    white-space: nowrap;
+}
+
+/* 复制成功反馈 */
+.wx-cta__id.is-copied {
+    background: linear-gradient(135deg, #10a55b, #0b8a4a);
+    box-shadow: 0 3px 12px rgba(16, 165, 91, .32);
+}
+
+/* 无 JS（或 JS 未就绪）时的兜底提示：由 wechat-cta.js 加 .wx-ready 后自动隐藏 */
+.wx-cta__hint {
+    flex: 1 1 100%;
+    margin: 0;
+    font-size: 12.5px;
+    color: #9aa4b2;
+    display: none;
+}
+
+.wx-cta__card:not(.wx-ready) .wx-cta__hint {
+    display: block;
+}
+
+/* ==========================================================================
+   紧凑变体 wx-mini
+   用于空间受限处（如 design 工具页的顶栏）。字体、字号一律 inherit，
+   以便融入宿主页面的设计语言；只有品牌橙是刻意保留的强调色。
+   ========================================================================== */
+
+.wx-mini {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: inherit;
+}
+
+.wx-mini__back {
+    display: inline-flex;
+    align-items: center;
+    height: 28px;
+    padding: 0 9px;
+    border: 1px solid currentColor;
+    border-radius: 6px;
+    color: inherit;
+    opacity: .6;
+    text-decoration: none;
+    white-space: nowrap;
+    font-size: 11.5px;
+    line-height: 1;
+    transition: opacity .15s;
+}
+
+.wx-mini__back:hover {
+    opacity: 1;
+}
+
+.wx-mini__id {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    height: 28px;
+    padding: 0 10px;
+    font-family: inherit;
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #fff;
+    background: linear-gradient(135deg, #ff6a00, #ff4400);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    white-space: nowrap;
+    -webkit-tap-highlight-color: transparent;
+    transition: filter .15s;
+}
+
+.wx-mini__id:hover {
+    filter: brightness(1.08);
+}
+
+.wx-mini__id.is-copied {
+    background: linear-gradient(135deg, #10a55b, #0b8a4a);
+}
+
+/* 卡片内嵌紧凑按钮时的统一高度 */
+.wx-mini .wx-cta__id-tag {
+    font-family: inherit;
+    font-size: 10.5px;
+    padding: 2px 7px;
+}
+
+@media screen and (max-width: 640px) {
+    .wx-mini {
+        gap: 6px;
+    }
+
+    /* 窄屏优先保住「微信」按钮，返回主站交给浏览器返回键 */
+    .wx-mini__back {
+        display: none;
+    }
+
+    .wx-mini__id {
+        height: 32px;
+        padding: 0 9px;
+        font-size: 10.5px;
+    }
+}
+
+/* ---------------- 窄屏 ---------------- */
+@media screen and (max-width: 640px) {
+    .wx-cta {
+        margin: 22px auto;
+    }
+
+    .wx-cta__card {
+        gap: 14px;
+        padding: 16px 16px 18px;
+    }
+
+    .wx-cta--prominent .wx-cta__card {
+        padding: 18px 16px 20px;
+    }
+
+    .wx-cta__icon {
+        width: 40px;
+        height: 40px;
+        font-size: 19px;
+        line-height: 40px;
+    }
+
+    .wx-cta__copy {
+        flex: 1 1 100%;
+    }
+
+    .wx-cta__title {
+        font-size: 16px;
+    }
+
+    .wx-cta--prominent .wx-cta__title {
+        font-size: 16.5px;
+    }
+
+    /* 手机上复制按钮整行通铺，最好点 */
+    .wx-cta__act {
+        flex: 1 1 100%;
+        align-items: stretch;
+    }
+
+    .wx-cta__id {
+        width: 100%;
+        justify-content: center;
+        font-size: 17px;
+        padding: 13px 16px;
+    }
+}
