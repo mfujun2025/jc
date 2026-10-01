@@ -40,6 +40,14 @@ var _hmt = _hmt || [];
         p{margin-bottom:16px;}
         footer{background:#222;color:#aaa;text-align:center;padding:30px 0;font-size:14px;margin-top:40px;}
         footer a{color:#ff7722;text-decoration:none;}
+    
+        /* 窄屏导航：导航项较多时允许换行，避免横向溢出 */
+        @media screen and (max-width:600px){
+            .header-wrap,.header-box,.top-nav{flex-wrap:wrap;row-gap:6px;}
+            .logo{font-size:18px;}
+            nav,.nav-link{display:flex;flex-wrap:wrap;justify-content:flex-end;margin-left:auto;}
+            nav a,.top-nav a{margin-left:10px;font-size:13px;padding:6px 0;}
+        }
     </style>
 </head>
 <body>
@@ -50,6 +58,7 @@ var _hmt = _hmt || [];
             <a href="https://xn--3lru7r.cn/">首页</a>
             <a href="https://xn--3lru7r.cn/news.html">卷尺资讯科普</a>
             <a href="https://xn--3lru7r.cn/logo-custom.html">卷尺logo定制</a>
+            <a href="https://cxtx.taobao.com" onclick="return openTaobaoShop(event)">卷尺定制</a>
         </nav>
     </div>
 </header>
@@ -127,7 +136,11 @@ var _hmt = _hmt || [];
         <h2>总结</h2>
         <p>我国钢卷尺执行行业标准QB/T 2443，按精度分为I级和II级，I级精度更高，II级是普通精度。II级卷尺5米误差不超过±1.3毫米，I级不超过±0.65毫米，这个精度对于一般施工、装修完全够用。标准对尺带、刻度、尺钩、外壳、弹簧等都有技术要求，规定了出厂检验和型式检验规则，以及标志、包装、运输、贮存要求。买卷尺时认准标注QB/T 2443和精度等级的产品，做简单自检，就能买到合格的卷尺。了解国家标准，既能帮你选到好卷尺，也能在遇到质量问题时维护自身权益。</p>
 
-    </main>
+    
+
+        <p>想进一步了解<a href="https://xn--3lru7r.cn/changjia.html">源头卷尺工厂是怎么生产的</a>，以及怎么判断一家厂家是否真实，可以移步这一页。</p>
+
+</main>
 </div>
 
 <footer>

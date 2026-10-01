@@ -41,6 +41,14 @@ var _hmt = _hmt || [];
         p{margin-bottom:16px;}
         footer{background:#222;color:#aaa;text-align:center;padding:30px 0;font-size:14px;margin-top:40px;}
         footer a{color:#ff7722;text-decoration:none;}
+    
+        /* 窄屏导航：导航项较多时允许换行，避免横向溢出 */
+        @media screen and (max-width:600px){
+            .header-wrap,.header-box,.top-nav{flex-wrap:wrap;row-gap:6px;}
+            .logo{font-size:18px;}
+            nav,.nav-link{display:flex;flex-wrap:wrap;justify-content:flex-end;margin-left:auto;}
+            nav a,.top-nav a{margin-left:10px;font-size:13px;padding:6px 0;}
+        }
     </style>
     <script defer src="https://tj.262m.com/script.js" data-website-id="6df21dfe-7ffd-436b-9f4a-26973a02239a"></script>
 </head>
@@ -52,7 +60,7 @@ var _hmt = _hmt || [];
             <a href="https://xn--3lru7r.cn/">首页</a>
             <a href="https://xn--3lru7r.cn/news.html">卷尺资讯科普</a>
             <a href="https://xn--3lru7r.cn/logo-custom.html">卷尺logo定制</a>
-            <a href="https://xn--3lru7r.cn" target="_blank">虞城卷尺厂家产业门户</a>
+            <a href="https://cxtx.taobao.com" onclick="return openTaobaoShop(event)">卷尺定制</a>
         </nav>
     </div>
 </header>
@@ -106,7 +114,11 @@ var _hmt = _hmt || [];
         <h2>总结</h2>
         <p>磁吸尺钩不是万能的，它只对铁质金属有效，但在钢结构、管道、焊接、汽修等频繁接触金属的工种里，确实能显著提升测量效率和安全性。如果你天天和钢铁打交道，多花十几块买一把磁吸卷尺很值；如果主要测量木材、塑料，普通卷尺就够用，没必要为用不上的功能买单。</p>
 
-    </main>
+    
+
+        <p>准备下单前，建议先弄清楚<a href="https://xn--3lru7r.cn/dingzhi-jiage.html">定制卷尺的定价逻辑</a>：数量和规格怎么影响单价，哪些费用容易被忽略。</p>
+
+</main>
 </div>
 
 <footer>
@@ -118,5 +130,24 @@ var _hmt = _hmt || [];
     </div>
 </footer>
 
+
+<script>
+function openTaobaoShop(e){
+    e.preventDefault();
+    var ua = navigator.userAgent;
+    if(/Android|iPhone|iPad|iPod/i.test(ua)){
+        var start = Date.now();
+        window.location.href = 'taobao://shop.taobao.com/shop_index.htm?shop_id=36021182';
+        setTimeout(function(){
+            if(Date.now() - start < 2500){
+                window.location.href = 'https://cxtx.taobao.com';
+            }
+        }, 2000);
+    }else{
+        window.open('https://cxtx.taobao.com', '_blank');
+    }
+    return false;
+}
+</script>
 </body>
 </html>

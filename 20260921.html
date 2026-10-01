@@ -40,6 +40,14 @@ var _hmt = _hmt || [];
         p{margin-bottom:16px;}
         footer{background:#222;color:#aaa;text-align:center;padding:30px 0;font-size:14px;margin-top:40px;}
         footer a{color:#ff7722;text-decoration:none;}
+    
+        /* 窄屏导航：导航项较多时允许换行，避免横向溢出 */
+        @media screen and (max-width:600px){
+            .header-wrap,.header-box,.top-nav{flex-wrap:wrap;row-gap:6px;}
+            .logo{font-size:18px;}
+            nav,.nav-link{display:flex;flex-wrap:wrap;justify-content:flex-end;margin-left:auto;}
+            nav a,.top-nav a{margin-left:10px;font-size:13px;padding:6px 0;}
+        }
     </style>
 </head>
 <body>
@@ -50,6 +58,7 @@ var _hmt = _hmt || [];
             <a href="https://xn--3lru7r.cn/">首页</a>
             <a href="https://xn--3lru7r.cn/news.html">卷尺资讯科普</a>
             <a href="https://xn--3lru7r.cn/logo-custom.html">卷尺logo定制</a>
+            <a href="https://cxtx.taobao.com" onclick="return openTaobaoShop(event)">卷尺定制</a>
         </nav>
     </div>
 </header>
@@ -134,7 +143,11 @@ var _hmt = _hmt || [];
         <h2>总结</h2>
         <p>钢卷尺和激光测距仪不是互相替代的关系，而是互补关系。钢卷尺便宜、耐用、短距离方便、能测不规则形状；激光测距仪长距离快、高空安全、能算面积体积。短距离、小尺寸、恶劣环境用钢卷尺；长距离、高空、专业高频测量用激光测距仪。最好的方案是两者搭配，钢卷尺随身带，激光测距仪放工具包，什么场景用什么工具，效率最高。</p>
 
-    </main>
+    
+
+        <p>要是只需要几十把，可以看<a href="https://xn--3lru7r.cn/xiaobanliang.html">小批量卷尺定制</a>：门槛低、不压货，适合门店和活动这类一次性场景。</p>
+
+</main>
 </div>
 
 <footer>

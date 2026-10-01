@@ -40,6 +40,14 @@ var _hmt = _hmt || [];
         p{margin-bottom:16px;}
         footer{background:#222;color:#aaa;text-align:center;padding:30px 0;font-size:14px;margin-top:40px;}
         footer a{color:#ff7722;text-decoration:none;}
+    
+        /* 窄屏导航：导航项较多时允许换行，避免横向溢出 */
+        @media screen and (max-width:600px){
+            .header-wrap,.header-box,.top-nav{flex-wrap:wrap;row-gap:6px;}
+            .logo{font-size:18px;}
+            nav,.nav-link{display:flex;flex-wrap:wrap;justify-content:flex-end;margin-left:auto;}
+            nav a,.top-nav a{margin-left:10px;font-size:13px;padding:6px 0;}
+        }
     </style>
 </head>
 <body>
@@ -50,6 +58,7 @@ var _hmt = _hmt || [];
             <a href="https://xn--3lru7r.cn/">首页</a>
             <a href="https://xn--3lru7r.cn/news.html">卷尺资讯科普</a>
             <a href="https://xn--3lru7r.cn/logo-custom.html">卷尺logo定制</a>
+            <a href="https://cxtx.taobao.com" onclick="return openTaobaoShop(event)">卷尺定制</a>
         </nav>
     </div>
 </header>
@@ -122,7 +131,11 @@ var _hmt = _hmt || [];
         <h2>总结</h2>
         <p>不同工种对卷尺的要求不同，选对了用着顺手、用得久，选错了用着别扭还容易坏。木工选挺度好的宽尺带，瓦工选全包胶耐磨的，水电工选磁吸尺钩公英双刻度的，钢筋工选抗摔长尺带的，油漆工选轻便防刮的，量房师选轻便好看的。根据自己的工种和使用场景选，不要盲目买贵的，也不要贪便宜买差的，20到50元区间的工业级卷尺，就能满足大部分工种的需求。</p>
 
-    </main>
+    
+
+        <p>如果用量不大也不用将就：本站<a href="https://xn--3lru7r.cn/xiaobanliang.html">10 把就能起订</a>，不用为了凑够厂家的 500 把门槛而压一堆库存。</p>
+
+</main>
 </div>
 
 <footer>

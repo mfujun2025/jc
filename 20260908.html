@@ -40,6 +40,14 @@ var _hmt = _hmt || [];
         p{margin-bottom:16px;}
         footer{background:#222;color:#aaa;text-align:center;padding:30px 0;font-size:14px;margin-top:40px;}
         footer a{color:#ff7722;text-decoration:none;}
+    
+        /* 窄屏导航：导航项较多时允许换行，避免横向溢出 */
+        @media screen and (max-width:600px){
+            .header-wrap,.header-box,.top-nav{flex-wrap:wrap;row-gap:6px;}
+            .logo{font-size:18px;}
+            nav,.nav-link{display:flex;flex-wrap:wrap;justify-content:flex-end;margin-left:auto;}
+            nav a,.top-nav a{margin-left:10px;font-size:13px;padding:6px 0;}
+        }
     </style>
 </head>
 <body>
@@ -50,6 +58,7 @@ var _hmt = _hmt || [];
             <a href="https://xn--3lru7r.cn/">首页</a>
             <a href="https://xn--3lru7r.cn/news.html">卷尺资讯科普</a>
             <a href="https://xn--3lru7r.cn/logo-custom.html">卷尺logo定制</a>
+            <a href="https://cxtx.taobao.com" onclick="return openTaobaoShop(event)">卷尺定制</a>
         </nav>
     </div>
 </header>
@@ -102,7 +111,11 @@ var _hmt = _hmt || [];
         <h2>总结</h2>
         <p>ABS外壳轻便便宜、耐磨易清洁，适合家用和轻度使用；TPR包胶外壳抗摔防滑、握持舒适、耐寒性好，适合工地和高频专业使用。选购时根据你的使用环境和频率来选，经常在工地用就多花几块钱买包胶款，能显著延长卷尺寿命；家里偶尔用用，ABS款性价比更高。</p>
 
-    </main>
+    
+
+        <p>想把 logo 印在卷尺上长期使用，建议先了解<a href="https://xn--3lru7r.cn/logo-custom.html">激光打印卷尺的工艺对比</a>，避免选错工艺用一段时间就掉字。</p>
+
+</main>
 </div>
 
 <footer>

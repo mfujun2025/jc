@@ -40,6 +40,14 @@ var _hmt = _hmt || [];
         p{margin-bottom:16px;}
         footer{background:#222;color:#aaa;text-align:center;padding:30px 0;font-size:14px;margin-top:40px;}
         footer a{color:#ff7722;text-decoration:none;}
+    
+        /* 窄屏导航：导航项较多时允许换行，避免横向溢出 */
+        @media screen and (max-width:600px){
+            .header-wrap,.header-box,.top-nav{flex-wrap:wrap;row-gap:6px;}
+            .logo{font-size:18px;}
+            nav,.nav-link{display:flex;flex-wrap:wrap;justify-content:flex-end;margin-left:auto;}
+            nav a,.top-nav a{margin-left:10px;font-size:13px;padding:6px 0;}
+        }
     </style>
 </head>
 <body>
@@ -50,6 +58,7 @@ var _hmt = _hmt || [];
             <a href="https://xn--3lru7r.cn/">首页</a>
             <a href="https://xn--3lru7r.cn/news.html">卷尺资讯科普</a>
             <a href="https://xn--3lru7r.cn/logo-custom.html">卷尺logo定制</a>
+            <a href="https://cxtx.taobao.com" onclick="return openTaobaoShop(event)">卷尺定制</a>
         </nav>
     </div>
 </header>
@@ -140,7 +149,11 @@ var _hmt = _hmt || [];
         <h2>总结</h2>
         <p>一把小小的钢卷尺，生产起来要经过原料准备、尺带冲压、热处理、表面处理、刻度印刷、覆膜、外壳生产、总装、检验、包装等十几道大工序，几十道小工序。每道工序都有严格的质量控制，任何一道出问题都会影响成品质量。这就是为什么有的卷尺几块钱，有的要几十块钱——差别就在钢材、热处理、印刷精度、覆膜、外壳材质、检验标准这些环节。了解了生产流程，选购卷尺时就知道该看什么了：选锰钢尺带、有覆膜、品牌产品、精度等级明确的，质量更有保障。</p>
 
-    </main>
+    
+
+        <p>这些工艺细节背后，其实是生产端的差别。想了解<a href="https://xn--3lru7r.cn/changjia.html">卷尺定制厂家的生产流程与品控</a>，可以看这一页。</p>
+
+</main>
 </div>
 
 <footer>

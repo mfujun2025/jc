@@ -40,6 +40,14 @@ var _hmt = _hmt || [];
         p{margin-bottom:16px;}
         footer{background:#222;color:#aaa;text-align:center;padding:30px 0;font-size:14px;margin-top:40px;}
         footer a{color:#ff7722;text-decoration:none;}
+    
+        /* 窄屏导航：导航项较多时允许换行，避免横向溢出 */
+        @media screen and (max-width:600px){
+            .header-wrap,.header-box,.top-nav{flex-wrap:wrap;row-gap:6px;}
+            .logo{font-size:18px;}
+            nav,.nav-link{display:flex;flex-wrap:wrap;justify-content:flex-end;margin-left:auto;}
+            nav a,.top-nav a{margin-left:10px;font-size:13px;padding:6px 0;}
+        }
     </style>
 </head>
 <body>
@@ -50,6 +58,7 @@ var _hmt = _hmt || [];
             <a href="https://xn--3lru7r.cn/">首页</a>
             <a href="https://xn--3lru7r.cn/news.html">卷尺资讯科普</a>
             <a href="https://xn--3lru7r.cn/logo-custom.html">卷尺logo定制</a>
+            <a href="https://cxtx.taobao.com" onclick="return openTaobaoShop(event)">卷尺定制</a>
         </nav>
     </div>
 </header>
@@ -109,7 +118,11 @@ var _hmt = _hmt || [];
         <h2>总结</h2>
         <p>工业级和家用级卷尺的核心差异在精度等级、尺带材质、外壳耐用性和配件功能上。家用偶尔使用，10块钱的家用级完全够用；专业高频使用，20到30元的工业级更划算，精度有保障、寿命更长。不要盲目追求贵的，也不要贪便宜买劣质产品，根据自己的使用频率和精度需求选择，才是不花冤枉钱的正确做法。</p>
 
-    </main>
+    
+
+        <p>准备下单前，建议先弄清楚<a href="https://xn--3lru7r.cn/dingzhi-jiage.html">定制卷尺的定价逻辑</a>：数量和规格怎么影响单价，哪些费用容易被忽略。</p>
+
+</main>
 </div>
 
 <footer>

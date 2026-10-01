@@ -40,6 +40,14 @@ var _hmt = _hmt || [];
         p{margin-bottom:16px;}
         footer{background:#222;color:#aaa;text-align:center;padding:30px 0;font-size:14px;margin-top:40px;}
         footer a{color:#ff7722;text-decoration:none;}
+    
+        /* 窄屏导航：导航项较多时允许换行，避免横向溢出 */
+        @media screen and (max-width:600px){
+            .header-wrap,.header-box,.top-nav{flex-wrap:wrap;row-gap:6px;}
+            .logo{font-size:18px;}
+            nav,.nav-link{display:flex;flex-wrap:wrap;justify-content:flex-end;margin-left:auto;}
+            nav a,.top-nav a{margin-left:10px;font-size:13px;padding:6px 0;}
+        }
     </style>
 </head>
 <body>
@@ -50,6 +58,7 @@ var _hmt = _hmt || [];
             <a href="https://xn--3lru7r.cn/">首页</a>
             <a href="https://xn--3lru7r.cn/news.html">卷尺资讯科普</a>
             <a href="https://xn--3lru7r.cn/logo-custom.html">卷尺logo定制</a>
+            <a href="https://cxtx.taobao.com" onclick="return openTaobaoShop(event)">卷尺定制</a>
         </nav>
     </div>
 </header>
@@ -134,7 +143,11 @@ var _hmt = _hmt || [];
         <h2>总结</h2>
         <p>钢卷尺刻度印刷工艺主要有丝网印刷、移印、激光雕刻三种，丝网印刷成本低但不耐磨，移印精度高成本中等，激光雕刻最耐用但成本最高。覆膜保护是提升刻度耐用性的关键，有尼龙覆膜的卷尺刻度耐用性比没有覆膜的好好几倍。刻度磨损的原因主要是没有覆膜、油墨附着力差、涂层破损、环境腐蚀、使用不当、产品质量差。选购时选尼龙覆膜尺带、品牌产品、工业级卷尺、厚尺带，用指甲刮测试刻度牢度，就能选到刻度耐用不磨字的卷尺。</p>
 
-    </main>
+    
+
+        <p>如果打算把品牌标识做到卷尺上，可以参考<a href="https://xn--3lru7r.cn/logo-custom.html">卷尺 logo 定制</a>的完整做法：激光打印，logo 永不脱落褪色。</p>
+
+</main>
 </div>
 
 <footer>

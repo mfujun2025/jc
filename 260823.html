@@ -48,6 +48,14 @@ var _hmt = _hmt || [];
             .main-wrap{flex-direction:column;}
             .article-main,.sidebar{width:100%;min-width:100%;}
         }
+    
+        /* 窄屏导航：导航项较多时允许换行，避免横向溢出 */
+        @media screen and (max-width:600px){
+            .header-wrap,.header-box,.top-nav{flex-wrap:wrap;row-gap:6px;}
+            .logo{font-size:18px;}
+            nav,.nav-link{display:flex;flex-wrap:wrap;justify-content:flex-end;margin-left:auto;}
+            nav a,.top-nav a{margin-left:10px;font-size:13px;padding:6px 0;}
+        }
     </style>
     <script defer src="https://tj.262m.com/script.js" data-website-id="6df21dfe-7ffd-436b-9f4a-26973a02239a"></script>
 </head>
@@ -59,6 +67,7 @@ var _hmt = _hmt || [];
             <a href="https://xn--3lru7r.cn/">首页</a>
             <a href="https://xn--3lru7r.cn/news.html">卷尺资讯科普</a>
             <a href="https://xn--3lru7r.cn/logo-custom.html">卷尺logo定制</a>
+            <a href="https://cxtx.taobao.com" onclick="return openTaobaoShop(event)">卷尺定制</a>
         </nav>
     </div>
 </header>
@@ -86,7 +95,11 @@ var _hmt = _hmt || [];
             <h2 style="margin:25px 0 15px;color:#16325c;">三、钢卷尺测量的注意要点</h2>
             <p>长距离尽量一次测完，减少多次拼接读数；I级卷尺误差更小，工程验收尽量选用精度达标的卷尺；尺带出现弯折变形，就不要再用于重要尺寸复核。</p>
 
-            <div class="shop-block">
+            
+
+        <p>如果用量不大也不用将就：本站<a href="https://xn--3lru7r.cn/xiaobanliang.html">10 把就能起订</a>，不用为了凑够厂家的 500 把门槛而压一堆库存。</p>
+
+<div class="shop-block">
                 <h4>采购卷尺推荐店铺</h4>
                 <p>各类工业、工地、家用高精准钢卷尺，淘宝搜索店铺：<strong>尺行天下</strong></p>
                 <p>直达链接：<a href="https://cxtx.taobao.com" target="_blank">https://cxtx.taobao.com</a></p>
@@ -96,7 +109,7 @@ var _hmt = _hmt || [];
             <div class="side-box">
                 <h3 class="side-title">热门文章</h3>
                 <ul class="hot-list">
-                    <li><a href="2026-0826-01.html">5米钢卷尺选购要点，家用和工地工业卷尺怎么区分</a></li>
+                    <li><a href="20260912.html">钢卷尺工业级和家用级区别，怎么选不花冤枉钱</a></li>
                     <li><a href="2026-0826-02.html">钢卷尺I级II级精度标准解读，工程测量怎么选</a></li>
                     <li><a href="2026-0826-03.html">加厚耐磨钢卷尺有哪些优势，适合什么场景</a></li>
                 </ul>
@@ -115,5 +128,24 @@ var _hmt = _hmt || [];
         <p style="margin-top:8px;">采购卷尺：<a href="https://cxtx.taobao.com" target="_blank">淘宝店铺 尺行天下</a></p>
     </div>
 </footer>
+
+<script>
+function openTaobaoShop(e){
+    e.preventDefault();
+    var ua = navigator.userAgent;
+    if(/Android|iPhone|iPad|iPod/i.test(ua)){
+        var start = Date.now();
+        window.location.href = 'taobao://shop.taobao.com/shop_index.htm?shop_id=36021182';
+        setTimeout(function(){
+            if(Date.now() - start < 2500){
+                window.location.href = 'https://cxtx.taobao.com';
+            }
+        }, 2000);
+    }else{
+        window.open('https://cxtx.taobao.com', '_blank');
+    }
+    return false;
+}
+</script>
 </body>
 </html>

@@ -40,6 +40,14 @@ var _hmt = _hmt || [];
         p{margin-bottom:16px;}
         footer{background:#222;color:#aaa;text-align:center;padding:30px 0;font-size:14px;margin-top:40px;}
         footer a{color:#ff7722;text-decoration:none;}
+    
+        /* 窄屏导航：导航项较多时允许换行，避免横向溢出 */
+        @media screen and (max-width:600px){
+            .header-wrap,.header-box,.top-nav{flex-wrap:wrap;row-gap:6px;}
+            .logo{font-size:18px;}
+            nav,.nav-link{display:flex;flex-wrap:wrap;justify-content:flex-end;margin-left:auto;}
+            nav a,.top-nav a{margin-left:10px;font-size:13px;padding:6px 0;}
+        }
     </style>
 </head>
 <body>
@@ -50,6 +58,7 @@ var _hmt = _hmt || [];
             <a href="https://xn--3lru7r.cn/">首页</a>
             <a href="https://xn--3lru7r.cn/news.html">卷尺资讯科普</a>
             <a href="https://xn--3lru7r.cn/logo-custom.html">卷尺logo定制</a>
+            <a href="https://cxtx.taobao.com" onclick="return openTaobaoShop(event)">卷尺定制</a>
         </nav>
     </div>
 </header>
@@ -107,7 +116,11 @@ var _hmt = _hmt || [];
         <h2>总结</h2>
         <p>钢卷尺不是买了就永远准，定期校准是保证测量精度的必要步骤。工地简易校准用双尺对比、标准物测量、尺钩零点检查这三招，几分钟就能完成。发现尺钩磨损、尺带变形、刻度模糊、误差超标，果断更换，不要因小失大。一把准确的卷尺，是做好工程的基础。</p>
 
-    </main>
+    
+
+        <p>想进一步了解<a href="https://xn--3lru7r.cn/changjia.html">源头卷尺工厂是怎么生产的</a>，以及怎么判断一家厂家是否真实，可以移步这一页。</p>
+
+</main>
 </div>
 
 <footer>

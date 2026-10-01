@@ -40,6 +40,14 @@ var _hmt = _hmt || [];
         p{margin-bottom:16px;}
         footer{background:#222;color:#aaa;text-align:center;padding:30px 0;font-size:14px;margin-top:40px;}
         footer a{color:#ff7722;text-decoration:none;}
+    
+        /* 窄屏导航：导航项较多时允许换行，避免横向溢出 */
+        @media screen and (max-width:600px){
+            .header-wrap,.header-box,.top-nav{flex-wrap:wrap;row-gap:6px;}
+            .logo{font-size:18px;}
+            nav,.nav-link{display:flex;flex-wrap:wrap;justify-content:flex-end;margin-left:auto;}
+            nav a,.top-nav a{margin-left:10px;font-size:13px;padding:6px 0;}
+        }
     </style>
 </head>
 <body>
@@ -50,7 +58,7 @@ var _hmt = _hmt || [];
             <a href="https://xn--3lru7r.cn/">首页</a>
             <a href="https://xn--3lru7r.cn/news.html">卷尺资讯科普</a>
             <a href="https://xn--3lru7r.cn/logo-custom.html">卷尺logo定制</a>
-            <a href="https://xn--3lru7r.cn" target="_blank">虞城卷尺厂家产业门户</a>
+            <a href="https://cxtx.taobao.com" onclick="return openTaobaoShop(event)">卷尺定制</a>
         </nav>
     </div>
 </header>
@@ -117,5 +125,24 @@ var _hmt = _hmt || [];
     </div>
 </footer>
 
+
+<script>
+function openTaobaoShop(e){
+    e.preventDefault();
+    var ua = navigator.userAgent;
+    if(/Android|iPhone|iPad|iPod/i.test(ua)){
+        var start = Date.now();
+        window.location.href = 'taobao://shop.taobao.com/shop_index.htm?shop_id=36021182';
+        setTimeout(function(){
+            if(Date.now() - start < 2500){
+                window.location.href = 'https://cxtx.taobao.com';
+            }
+        }, 2000);
+    }else{
+        window.open('https://cxtx.taobao.com', '_blank');
+    }
+    return false;
+}
+</script>
 </body>
 </html>

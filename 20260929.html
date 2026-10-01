@@ -40,6 +40,14 @@ var _hmt = _hmt || [];
         p{margin-bottom:16px;}
         footer{background:#222;color:#aaa;text-align:center;padding:30px 0;font-size:14px;margin-top:40px;}
         footer a{color:#ff7722;text-decoration:none;}
+    
+        /* 窄屏导航：导航项较多时允许换行，避免横向溢出 */
+        @media screen and (max-width:600px){
+            .header-wrap,.header-box,.top-nav{flex-wrap:wrap;row-gap:6px;}
+            .logo{font-size:18px;}
+            nav,.nav-link{display:flex;flex-wrap:wrap;justify-content:flex-end;margin-left:auto;}
+            nav a,.top-nav a{margin-left:10px;font-size:13px;padding:6px 0;}
+        }
     </style>
 </head>
 <body>
@@ -50,6 +58,7 @@ var _hmt = _hmt || [];
             <a href="https://xn--3lru7r.cn/">首页</a>
             <a href="https://xn--3lru7r.cn/news.html">卷尺资讯科普</a>
             <a href="https://xn--3lru7r.cn/logo-custom.html">卷尺logo定制</a>
+            <a href="https://cxtx.taobao.com" onclick="return openTaobaoShop(event)">卷尺定制</a>
         </nav>
     </div>
 </header>
@@ -125,7 +134,11 @@ var _hmt = _hmt || [];
         <h2>总结</h2>
         <p>装修量房是装修的第一步，也是最基础的一步，量房数据准不准直接影响后面的设计、报价和施工。钢卷尺是量房最常用的工具，用5米或7.5米的品牌II级卷尺，量房前检查卷尺是否准确。量房要从入户门开始按顺序量，先整体后局部，从左到右从下到上，每个尺寸量两遍，边量边画边记。不同空间测量重点不同，厨房卫生间管道多要特别仔细。用卷尺量房要注意尺钩顶住或挂住、尺带拉直贴紧、读数平视、接尺做标记、量高度垂直。数据要画平面草图、统一用毫米、拍照辅助、备注特殊情况。常见错误有只量一遍、漏量管道插座、不量层高、卷尺不直、读数视差、接尺出错、单位混乱、不拍照，要注意避免。掌握了这些技巧，量房就能又快又准，不踩坑。</p>
 
-    </main>
+    
+
+        <p>顺带说一句，很多人以为定制必须大批量，其实<a href="https://xn--3lru7r.cn/xiaobanliang.html">小批量一样可以做</a>，10 把起订、3-7 天交货。</p>
+
+</main>
 </div>
 
 <footer>

@@ -40,6 +40,14 @@ var _hmt = _hmt || [];
         p{margin-bottom:16px;}
         footer{background:#222;color:#aaa;text-align:center;padding:30px 0;font-size:14px;margin-top:40px;}
         footer a{color:#ff7722;text-decoration:none;}
+    
+        /* 窄屏导航：导航项较多时允许换行，避免横向溢出 */
+        @media screen and (max-width:600px){
+            .header-wrap,.header-box,.top-nav{flex-wrap:wrap;row-gap:6px;}
+            .logo{font-size:18px;}
+            nav,.nav-link{display:flex;flex-wrap:wrap;justify-content:flex-end;margin-left:auto;}
+            nav a,.top-nav a{margin-left:10px;font-size:13px;padding:6px 0;}
+        }
     </style>
 </head>
 <body>
@@ -50,6 +58,7 @@ var _hmt = _hmt || [];
             <a href="https://xn--3lru7r.cn/">首页</a>
             <a href="https://xn--3lru7r.cn/news.html">卷尺资讯科普</a>
             <a href="https://xn--3lru7r.cn/logo-custom.html">卷尺logo定制</a>
+            <a href="https://cxtx.taobao.com" onclick="return openTaobaoShop(event)">卷尺定制</a>
         </nav>
     </div>
 </header>
@@ -142,7 +151,11 @@ var _hmt = _hmt || [];
         <h2>总结</h2>
         <p>钢卷尺批量采购要做好全流程管理：采购前明确需求、定预算、了解行情；选择合适的采购渠道（量大找厂家、中等上1688、小量本地市场、要品牌找代理）；选厂家看资质、规模、质量、客户、售后、交货能力；产品选型按使用场景定规格、尺带宽度、材质涂层、外壳、锁扣、尺钩、精度、档次；到货后按标准检验质量（外观、挺度、精度、零点补偿、收回力度、耐磨、防锈、摔落）；谈好价格，签好合同，用安全的付款方式；到货及时验收，有问题及时处理，和优质厂家建立长期合作。常见的坑有只看价格、不看样品、不签合同、全款预付、不验收、买到假货、规格选错、采购太多，要注意避免。掌握了这些，批量采购钢卷尺就能不踩坑，买到质优价廉的好产品。</p>
 
-    </main>
+    
+
+        <p>如果你正在做采购预算，可以顺带看看<a href="https://xn--3lru7r.cn/dingzhi-jiage.html">卷尺定制价格是怎么算出来的</a>——影响报价的 5 个因素都拆开讲了，比一个笼统的数字有用。</p>
+
+</main>
 </div>
 
 <footer>

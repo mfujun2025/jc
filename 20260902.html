@@ -30,6 +30,14 @@ h1{font-size:28px;margin-bottom:12px;color:#1a2b48;}
 .pub-time{color:#777;font-size:14px;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid #eee;}
 h2{font-size:20px;margin:28px 0 12px;color:#1a2b48;}
 p{margin-bottom:16px;font-size:16px;}
+    
+        /* 窄屏导航：导航项较多时允许换行，避免横向溢出 */
+        @media screen and (max-width:600px){
+            .header-wrap,.header-box,.top-nav{flex-wrap:wrap;row-gap:6px;}
+            .logo{font-size:18px;}
+            nav,.nav-link{display:flex;flex-wrap:wrap;justify-content:flex-end;margin-left:auto;}
+            nav a,.top-nav a{margin-left:10px;font-size:13px;padding:6px 0;}
+        }
     </style>
     <script defer src="https://tj.262m.com/script.js" data-website-id="6df21dfe-7ffd-436b-9f4a-26973a02239a"></script>
 </head>
@@ -40,7 +48,7 @@ p{margin-bottom:16px;font-size:16px;}
     <div class="nav‑link">
         <a href="./">首页</a>
         <a href="./">卷尺资讯科普</a>
-        <a href="./">虞城卷尺厂家产业门户</a>
+        <a href="https://cxtx.taobao.com" onclick="return openTaobaoShop(event)">卷尺定制</a>
     </div>
 </div>
 
@@ -67,5 +75,24 @@ p{margin-bottom:16px;font-size:16px;}
         <p>另外注意，卷尺属于计量器具，部分工程会要求进场工具具备计量校验。对精度有严格要求的项目，需要定期对卷尺进行校验，保证测量数据可靠。</p>
     </div>
 </div>
+
+<script>
+function openTaobaoShop(e){
+    e.preventDefault();
+    var ua = navigator.userAgent;
+    if(/Android|iPhone|iPad|iPod/i.test(ua)){
+        var start = Date.now();
+        window.location.href = 'taobao://shop.taobao.com/shop_index.htm?shop_id=36021182';
+        setTimeout(function(){
+            if(Date.now() - start < 2500){
+                window.location.href = 'https://cxtx.taobao.com';
+            }
+        }, 2000);
+    }else{
+        window.open('https://cxtx.taobao.com', '_blank');
+    }
+    return false;
+}
+</script>
 </body>
 </html>

@@ -40,6 +40,14 @@ var _hmt = _hmt || [];
         p{margin-bottom:16px;}
         footer{background:#222;color:#aaa;text-align:center;padding:30px 0;font-size:14px;margin-top:40px;}
         footer a{color:#ff7722;text-decoration:none;}
+    
+        /* 窄屏导航：导航项较多时允许换行，避免横向溢出 */
+        @media screen and (max-width:600px){
+            .header-wrap,.header-box,.top-nav{flex-wrap:wrap;row-gap:6px;}
+            .logo{font-size:18px;}
+            nav,.nav-link{display:flex;flex-wrap:wrap;justify-content:flex-end;margin-left:auto;}
+            nav a,.top-nav a{margin-left:10px;font-size:13px;padding:6px 0;}
+        }
     </style>
 </head>
 <body>
@@ -50,6 +58,7 @@ var _hmt = _hmt || [];
             <a href="https://xn--3lru7r.cn/">首页</a>
             <a href="https://xn--3lru7r.cn/news.html">卷尺资讯科普</a>
             <a href="https://xn--3lru7r.cn/logo-custom.html">卷尺logo定制</a>
+            <a href="https://cxtx.taobao.com" onclick="return openTaobaoShop(event)">卷尺定制</a>
         </nav>
     </div>
 </header>
@@ -126,7 +135,11 @@ var _hmt = _hmt || [];
         <h2>总结</h2>
         <p>长卷尺和短卷尺是两种不同的工具，短卷尺适合10米以内的室内小尺寸测量，自动收回、单手操作；长卷尺适合20米以上的户外大尺寸测量，手动摇卷、两人配合。长卷尺有架式和摇卷式两种，架式稳定适合长距离，摇卷式轻便适合中等距离。选购长卷尺要选合适长度、看尺带质量、架子或外壳、摇柄、尺钩、刹车装置、品牌价格、精度等级。使用长卷尺要两个人配合、尺带拉直、读数平视、注意温度影响、收回慢、不要在地上拖、用完擦干。了解了长卷尺的特点和使用方法，就能选到合适的长卷尺，用好长卷尺。</p>
 
-    </main>
+    
+
+        <p>如果你正在做采购预算，可以顺带看看<a href="https://xn--3lru7r.cn/dingzhi-jiage.html">卷尺定制价格是怎么算出来的</a>——影响报价的 5 个因素都拆开讲了，比一个笼统的数字有用。</p>
+
+</main>
 </div>
 
 <footer>

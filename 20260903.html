@@ -41,6 +41,14 @@ var _hmt = _hmt || [];
         p{margin-bottom:16px;}
         footer{background:#222;color:#aaa;text-align:center;padding:30px 0;font-size:14px;margin-top:40px;}
         footer a{color:#ff7722;text-decoration:none;}
+    
+        /* 窄屏导航：导航项较多时允许换行，避免横向溢出 */
+        @media screen and (max-width:600px){
+            .header-wrap,.header-box,.top-nav{flex-wrap:wrap;row-gap:6px;}
+            .logo{font-size:18px;}
+            nav,.nav-link{display:flex;flex-wrap:wrap;justify-content:flex-end;margin-left:auto;}
+            nav a,.top-nav a{margin-left:10px;font-size:13px;padding:6px 0;}
+        }
     </style>
     <script defer src="https://tj.262m.com/script.js" data-website-id="6df21dfe-7ffd-436b-9f4a-26973a02239a"></script>
 </head>
@@ -51,7 +59,7 @@ var _hmt = _hmt || [];
         <nav>
             <a href="https://xn--3lru7r.cn/">首页</a>
             <a href="https://xn--3lru7r.cn/news.html">卷尺资讯科普</a>
-            <a href="https://xn--3lru7r.cn" target="_blank">虞城卷尺厂家产业门户</a>
+            <a href="https://cxtx.taobao.com" onclick="return openTaobaoShop(event)">卷尺定制</a>
         </nav>
     </div>
 </header>
@@ -96,7 +104,11 @@ var _hmt = _hmt || [];
         <h2>总结</h2>
         <p>钢卷尺规格没有绝对的好坏，只有适不适合你的使用场景。3米轻便随身，5米通用万金油，7.5米工程长尺寸，10米以上专业大跨度。根据你的工种、测量距离、使用频率来选，或者5米加7.5米搭配，基本能覆盖绝大多数场景。选对规格，测量效率翻倍。</p>
 
-    </main>
+    
+
+        <p>关于<a href="https://xn--3lru7r.cn/dingzhi-jiage.html">卷尺定制的价格构成</a>，我们单独写了一页拆解，比价时可以拿去对照。</p>
+
+</main>
 </div>
 
 <footer>
@@ -108,5 +120,24 @@ var _hmt = _hmt || [];
     </div>
 </footer>
 
+
+<script>
+function openTaobaoShop(e){
+    e.preventDefault();
+    var ua = navigator.userAgent;
+    if(/Android|iPhone|iPad|iPod/i.test(ua)){
+        var start = Date.now();
+        window.location.href = 'taobao://shop.taobao.com/shop_index.htm?shop_id=36021182';
+        setTimeout(function(){
+            if(Date.now() - start < 2500){
+                window.location.href = 'https://cxtx.taobao.com';
+            }
+        }, 2000);
+    }else{
+        window.open('https://cxtx.taobao.com', '_blank');
+    }
+    return false;
+}
+</script>
 </body>
 </html>
