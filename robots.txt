@@ -1,0 +1,12 @@
+# robots.txt for 卷尺.cn (xn--3lru7r.cn)
+# 品牌：尺行天下 · 卷尺LOGO定制
+# 源站：GitHub Pages + Cloudflare CDN
+
+User-agent: *
+Allow: /
+
+# 百度蜘蛛（主站目标搜索引擎）
+User-agent: Baiduspider
+Allow: /
+
+Sitemap: https://xn--3lru7r.cn/sitemap.xml

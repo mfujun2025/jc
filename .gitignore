@@ -1,0 +1,7 @@
+# 本地备份目录（旧版 HTML 副本），不得发布到 GitHub Pages
+_backup_original/
+
+# 系统与编辑器
+.DS_Store
+Thumbs.db
+*.swp
