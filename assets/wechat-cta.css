@@ -451,3 +451,22 @@ html.is-mobile .wx-cta__qr {
         height: 112px;
     }
 }
+
+
+/* 加好友备注引导（客服入口撤回后新增，引导访客带需求来加） */
+.wx-cta__tip {
+  margin: 8px 0 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink-3, #6b7280);
+}
+.wx-cta__tip::before {
+  content: "";
+  display: inline-block;
+  width: 3px;
+  height: 12px;
+  margin-right: 7px;
+  border-radius: 2px;
+  background: #f59e0b;
+  vertical-align: -1px;
+}
