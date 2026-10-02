@@ -81,7 +81,7 @@
     flex: 0 0 auto;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;   /* 二维码 / 标签 / 按钮 同轴居中，加了二维码后更整齐 */
     gap: 6px;
 }
 
@@ -163,6 +163,119 @@
 }
 
 /* ==========================================================================
+   微信客服入口（企业微信客服）
+   链接形态：https://work.weixin.qq.com/kfid/<kfcode>
+   这个链接在不同环境表现完全不同，所以默认走「扫码」，只在微信内切成「直链」：
+     · 微信内    → 点直链一步进客服会话（最佳）
+     · 非微信内  → 那些环境点链接会执行 weixin:// 协议跳转，大概率白屏
+                   所以默认显示二维码，让用户用微信扫
+   切换靠 wechat-cta.js 给 <html> 加 .in-wechat
+   默认态 = 二维码，这样即使 JS 没跑起来也不会把用户导向白屏
+   ========================================================================== */
+
+/* 微信内直达按钮（默认隐藏） */
+.wx-cta__kf {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 46px;
+    padding: 0 22px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #10a55b, #0b8a4a);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+    box-shadow: 0 3px 12px rgba(16, 165, 91, .28);
+    transition: transform .15s, box-shadow .15s;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.wx-cta__kf:hover {
+    box-shadow: 0 5px 18px rgba(16, 165, 91, .38);
+    transform: translateY(-1px);
+}
+
+.wx-cta__kf-tag {
+    font-family: "Microsoft Yahei", system-ui, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    padding: 3px 9px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, .24);
+    white-space: nowrap;
+}
+
+/* 客服二维码（默认显示，非微信环境靠扫码） */
+.wx-cta__qr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+}
+
+.wx-cta__qr img {
+    display: block;
+    width: 120px;
+    height: 120px;
+    padding: 5px;
+    background: #fff;
+    border: 1px solid #e4e9ef;
+    border-radius: 9px;
+}
+
+.wx-cta__qr-txt {
+    font-size: 12px;
+    color: #6b7684;
+    white-space: nowrap;
+}
+
+/* 按环境切形态（.in-wechat / .is-mobile 由 wechat-cta.js 打在 <html> 上）
+     微信内      → 直链按钮（一步进会话）
+     手机·非微信  → 直链按钮（能唤起微信 App；手机上放二维码没用，扫不了自己屏幕）
+     电脑·非微信  → 二维码（点直链会 weixin:// 白屏，所以就地扫码）
+   默认态 = 二维码：JS 没跑起来时，桌面用户也不会被导向白屏。 */
+html.in-wechat .wx-cta__kf,
+html.is-mobile .wx-cta__kf {
+    display: inline-flex;
+}
+
+html.in-wechat .wx-cta__qr,
+html.is-mobile .wx-cta__qr {
+    display: none;
+}
+
+/* 二维码弹层：给 space 不够用的紧凑变体（design 工具页顶栏）用 */
+.wx-kf-pop {
+    position: absolute;
+    z-index: 9999;
+    padding: 12px;
+    background: #fff;
+    border: 1px solid #e4e9ef;
+    border-radius: 12px;
+    box-shadow: 0 8px 28px rgba(17, 24, 39, .16);
+    text-align: center;
+}
+
+.wx-kf-pop img {
+    display: block;
+    width: 168px;
+    height: 168px;
+}
+
+.wx-kf-pop span {
+    display: block;
+    margin-top: 8px;
+    font-family: "Microsoft Yahei", system-ui, sans-serif;
+    font-size: 12.5px;
+    font-weight: 400;
+    color: #6b7684;
+    white-space: nowrap;
+}
+
+/* ==========================================================================
    紧凑变体 wx-mini
    用于空间受限处（如 design 工具页的顶栏）。字体、字号一律 inherit，
    以便融入宿主页面的设计语言；只有品牌橙是刻意保留的强调色。
@@ -222,6 +335,28 @@
     background: linear-gradient(135deg, #10a55b, #0b8a4a);
 }
 
+/* 紧凑版客服入口。空间不够放二维码，所以非微信环境改成点开弹层（见 wechat-cta.js） */
+.wx-mini__kf {
+    display: inline-flex;
+    align-items: center;
+    height: 28px;
+    padding: 0 10px;
+    font-family: inherit;
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #fff;
+    background: linear-gradient(135deg, #10a55b, #0b8a4a);
+    border-radius: 6px;
+    text-decoration: none;
+    white-space: nowrap;
+    -webkit-tap-highlight-color: transparent;
+    transition: filter .15s;
+}
+
+.wx-mini__kf:hover {
+    filter: brightness(1.08);
+}
+
 /* 卡片内嵌紧凑按钮时的统一高度 */
 .wx-mini .wx-cta__id-tag {
     font-family: inherit;
@@ -240,6 +375,12 @@
     }
 
     .wx-mini__id {
+        height: 32px;
+        padding: 0 9px;
+        font-size: 10.5px;
+    }
+
+    .wx-mini__kf {
         height: 32px;
         padding: 0 9px;
         font-size: 10.5px;
@@ -291,5 +432,22 @@
         justify-content: center;
         font-size: 17px;
         padding: 13px 16px;
+    }
+
+    /* 客服按钮同样整行通铺 */
+    .wx-cta__kf {
+        width: 100%;
+        font-size: 16px;
+        padding: 13px 16px;
+    }
+
+    /* 二维码居中，尺寸略收，避免小屏卡片过高 */
+    .wx-cta__qr {
+        width: 100%;
+    }
+
+    .wx-cta__qr img {
+        width: 112px;
+        height: 112px;
     }
 }
