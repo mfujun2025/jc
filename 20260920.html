@@ -164,17 +164,16 @@ var _hmt = _hmt || [];
 function openTaobaoShop(e){
     e.preventDefault();
     var ua = navigator.userAgent;
-    if(/Android|iPhone|iPad|iPod/i.test(ua)){
-        var start = Date.now();
-        window.location.href = 'taobao://shop.taobao.com/shop_index.htm?shop_id=36021182';
-        setTimeout(function(){
-            if(Date.now() - start < 2500){
-                window.location.href = 'https://shop36021182.taobao.com';
-            }
-        }, 2000);
-    }else{
-        window.open('https://shop36021182.taobao.com', '_blank');
+    var shopUrl = 'https://shop36021182.taobao.com';
+    if(!/Android|iPhone|iPad|iPod/i.test(ua)){
+        window.open(shopUrl, '_blank');
+        return false;
     }
+    if(/MicroMessenger/i.test(ua)){
+        alert('请点击右上角「...」，选择「在浏览器打开」即可进入淘宝店铺');
+        return false;
+    }
+    window.location.href = shopUrl;
     return false;
 }
 </script>
