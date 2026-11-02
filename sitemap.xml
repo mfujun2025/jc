@@ -1,20 +1,44 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://xn--3lru7r.cn/</loc>
-    <lastmod>2026-10-31</lastmod>
+    <loc>https://xn--3lru7r.cn/index.html</loc>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://xn--3lru7r.cn/news.html</loc>
-    <lastmod>2026-10-31</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://xn--3lru7r.cn/logo-custom.html</loc>
-    <lastmod>2026-10-31</lastmod>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://xn--3lru7r.cn/tape-generator.html</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://xn--3lru7r.cn/20261103.html</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://xn--3lru7r.cn/20261102.html</loc>
+    <lastmod>2026-11-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://xn--3lru7r.cn/20261101.html</loc>
+    <lastmod>2026-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -439,6 +463,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://xn--3lru7r.cn/changjia.html</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://xn--3lru7r.cn/dingzhi-jiage.html</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>monthly</changefreq>
@@ -451,12 +481,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://xn--3lru7r.cn/changjia.html</loc>
-    <lastmod>2026-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://xn--3lru7r.cn/2026-0826-02.html</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>monthly</changefreq>
@@ -464,6 +488,12 @@
   </url>
   <url>
     <loc>https://xn--3lru7r.cn/2026-0826-03.html</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://xn--3lru7r.cn/baidu_verify_codeva-F9QRMfDrLz.html</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
